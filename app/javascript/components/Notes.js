@@ -9,6 +9,10 @@ const Notes = (props) => {
       <div key={note.id}>
         <p>{note.title}</p>
         <p>{note.desc}</p>
+          <div>
+            <a href={`/notes/${note.id}`}>Show Note on Full Page</a>
+            <a href={`/notes/${note.id}/edit`}>Edit Note Page</a>
+          </div>
         </div>
       );
       })}

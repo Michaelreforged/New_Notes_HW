@@ -10,7 +10,7 @@ class NotesController < ApplicationController
   end
 
   def create
-    note = Note.new(user_params)
+    note = Note.new(note_params)
     if note.save
       redirect_to notes_path
     else
@@ -22,8 +22,21 @@ class NotesController < ApplicationController
     render component: "Note", props: {note: note}
   end
 
+  def edit
+    note = Note.find(params[:id])
+    render component: "EditNote", props: {note: note}
+  end
+
+  def update
+    note = Note.find(params[:id])
+    if note.update(note_params)
+      redirect_to notes_path
+    else
+    end
+  end
+
   private 
-  def user_params
+  def note_params
     params.require(:note).permit(:title, :desc)
   end
 end
