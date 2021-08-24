@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   patch "/notes/:id", to: "notes#update"
   put "/notes/:id", to: "notes#update"
+  delete "/notes/:id", to: "notes#destroy"
 
 end

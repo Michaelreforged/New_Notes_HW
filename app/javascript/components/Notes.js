@@ -12,6 +12,7 @@ const Notes = (props) => {
           <div>
             <a href={`/notes/${note.id}`}>Show Note on Full Page</a>
             <a href={`/notes/${note.id}/edit`}>Edit Note Page</a>
+            <a href={`/notes/${note.id}/`} data-method="delete">Delete Note </a>
           </div>
         </div>
       );
