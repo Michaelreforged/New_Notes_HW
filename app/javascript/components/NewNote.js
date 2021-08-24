@@ -4,11 +4,12 @@ const NewNote = () =>{
   return (
     <div>
       <h1>New Note</h1>
-      <form>
+      <form action ="/notes" method="post">
         <p>Title</p>
-        <input />
+        <input name= "note[title]"/>
         <p>Description</p>
-        <input />
+        <input name= "note[desc]"/>
+        <button type="submit">Add New Note</button>
       </form>
     </div>
   );
